@@ -55,7 +55,6 @@ function calculateResult() {
 let points = parseInt(localStorage.getItem('points')) || 0;
 
 
-
 function verifierReponseEtRediriger1(numeroReponse) {
     const bonneReponse = 3; 
     if (numeroReponse === bonneReponse) {
@@ -76,7 +75,7 @@ function verifierReponseEtRediriger2(numeroReponse) {
 }
 
 function verifierReponseEtRediriger3(numeroReponse) {
-    const bonneReponse = 2; 
+    const bonneReponse = 3; 
     if (numeroReponse === bonneReponse) {
         points += 1; 
     }
@@ -85,7 +84,7 @@ function verifierReponseEtRediriger3(numeroReponse) {
 }
 
 function afficherScoreFinal() {
-    let points = parseInt(localStorage.getItem('points')) || 0;
+    let points = parseInt(localStorage.getItem('points'));
     const scoreElement = document.getElementById('score-final');
     if (scoreElement) {
         scoreElement.textContent = "Votre score est : " + points;
@@ -93,7 +92,6 @@ function afficherScoreFinal() {
         console.error("L'élément avec l'ID 'score-final' est introuvable.");
     }
 }
-
 
  function recommencer() {
     localStorage.setItem('points', 0);
@@ -128,3 +126,75 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 } 
+
+/* ------------------------------ Brute Force ------------------------------- */
+document.getElementById('bruteforce-button').addEventListener('click', function() {
+    bruteForceQuiz();
+});
+
+function bruteForceQuiz() {
+    const questions = [
+        {
+            url: 'quest_1.html',
+            answers: [1, 2, 3, 4], // Les réponses possibles pour la question 1
+            correctAnswer: 3, // La réponse correcte pour la question 1
+        },
+        {
+            url: 'quest_2.html',
+            answers: [1, 2, 3, 4], // Les réponses possibles pour la question 2
+            correctAnswer: 2, // La réponse correcte pour la question 2
+        },
+        {
+            url: 'quest_3.html',
+            answers: [1, 2, 3, 4], // Les réponses possibles pour la question 3
+            correctAnswer: 3, // La réponse correcte pour la question 3
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+
+    function nextQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            let question = questions[currentQuestionIndex];
+            bruteForceQuestion(question);
+        } else {
+            alert('Brute force terminé. Votre score est ' + points);
+            window.location.href = "resultats.html";
+        }
+    }
+
+    function bruteForceQuestion(question) {
+        for (let answer of question.answers) {
+            fetch(`/submit-answer`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    questionUrl: question.url,
+                    answer: answer,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.correct) {
+                    points += 1;
+                    localStorage.setItem('points', points);
+                    currentQuestionIndex++; // Passer à la question suivante
+                    nextQuestion(); // Passer à la question suivante
+                } else {
+                    currentQuestionIndex++; // Passer à la question suivante même si la réponse est incorrecte
+                    nextQuestion();
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la tentative de brute force:', error);
+                currentQuestionIndex++; // Passer à la question suivante en cas d'erreur
+                nextQuestion();
+            });
+        }
+    }
+
+    nextQuestion();
+}
+

@@ -13,7 +13,8 @@
             <li><a href="tmp.html" class="nav-link">Home</a></li>
             <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
             <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="mailto:contact@koalasite.com" class="nav-link" id="bruteforce-button">BruteForce</a></li>
+
         </ul>
     </nav>
 </header>
@@ -22,19 +23,19 @@
   <br><br><br>
   <h3><center>Question 1</center></h3>
   <br><br>
-  <h4><center>Question à rédiger</center></h4>
+  <h4><center>Quel est le principal habitat des koalas ?</center></h4>
 
   <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(1)">
-    Réponse 1
+    Les déserts australiens
   </button>
   <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(2)">
-    Réponse 2
+    Les forêts tropicales humides
   </button>
   <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(3)">
-    Réponse 3
+    Les forêts d'eucalyptus
   </button>
   <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(4)">
-    Réponse 4
+    Les montagnes enneigées
   </button>
 
   <div class="vertical-bar left">
@@ -49,6 +50,8 @@
     <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
 </div>
 
+
+
 <footer class="site-footer">
   <div class="footer-content">
       <div class="contact-info">
@@ -61,19 +64,15 @@
       <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
   </div>
 </footer>
+
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem('points') === null) {
       localStorage.setItem('points', 0);
   }
 });
-
-
-
 </script>
-  
-
-  <p id="resultat">Points : 0</p>
   <script src="js/script.js"></script>
 </body>
 </html>
