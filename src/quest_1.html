@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Koalas</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ajout de style pour les boutons afin de les ajuster à leur texte */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .button-container button {
+      min-width: 220px; /* Minimum width pour que le texte s'ajuste */
+      height: auto;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px; /* Ajustement de la taille du texte */
+      text-align: center; /* Centrer le texte à l'intérieur du bouton */
+      white-space: normal; /* Permet au texte de se répartir sur plusieurs lignes si nécessaire */
+    }
+  </style>
 </head>
+
 <body onload="afficherPoints()">
+
+  <!-- Header avec la navigation -->
   <header>
     <nav>
-        <ul>
-            <li><a href="tmp.html" class="nav-link">Home</a></li>
-            <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
-            <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
-            <li><a href="mailto:contact@koalasite.com" class="nav-link" id="bruteforce-button">BruteForce</a></li>
-
-        </ul>
+      <ul>
+        <li><a href="tmp.html" class="nav-link">Home</a></li>
+        <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+        <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+        <li><a href="mailto:contact@koalasite.com" class="nav-link" id="bruteforce-button">BruteForce</a></li>
+      </ul>
     </nav>
-</header>
-<br><br><br><br>
+  </header>
+
+  <!-- Espace entre le header et le contenu -->
+  <br><br><br><br>
+
+  <!-- Titre principal -->
   <h1><center>Questionnaire</center></h1>
+
+  <!-- Espaces avant la question -->
   <br><br><br>
+
+  <!-- Question -->
   <h3><center>Question 1</center></h3>
   <br><br>
   <h4><center>Quel est le principal habitat des koalas ?</center></h4>
 
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(1)">
-    Les déserts australiens
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(2)">
-    Les forêts tropicales humides
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(3)">
-    Les forêts d'eucalyptus
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(4)">
-    Les montagnes enneigées
-  </button>
+  <!-- Conteneur pour les boutons alignés -->
+  <div class="button-container">
+    <button onclick="verifierReponseEtRediriger1(1)">
+      Les déserts australiens
+    </button>
+    <button onclick="verifierReponseEtRediriger1(2)">
+      Les forêts tropicales humides
+    </button>
+    <button onclick="verifierReponseEtRediriger1(3)">
+      Les forêts d'eucalyptus
+    </button>
+    <button onclick="verifierReponseEtRediriger1(4)">
+      Les montagnes enneigées
+    </button>
+  </div>
 
+  <!-- Publicité à gauche -->
   <div class="vertical-bar left">
     <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
-</div>
+  </div>
 
-<div class="vertical-bar right">
+  <!-- Publicité à droite -->
+  <div class="vertical-bar right">
     <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
-</div>
+  </div>
 
-
-
-<footer class="site-footer">
-  <div class="footer-content">
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
       <div class="contact-info">
-          <h3>Contactez-nous</h3>
-          <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
-          <p>Téléphone : +33 6 12 34 56 78</p>
+        <h3>Contactez-nous</h3>
+        <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+        <p>Téléphone : +33 6 12 34 56 78</p>
       </div>
-  </div>
-  <div class="footer-bottom">
+    </div>
+    <div class="footer-bottom">
       <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
-  </div>
-</footer>
+    </div>
+  </footer>
 
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem('points') === null) {
-      localStorage.setItem('points', 0);
-  }
-});
-</script>
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem('points') === null) {
+        localStorage.setItem('points', 0);
+      }
+    });
+  </script>
+  
   <script src="js/script.js"></script>
 </body>
+
 </html>

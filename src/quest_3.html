@@ -5,63 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Questionnaire</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ajout de style pour les boutons afin de les ajuster à leur texte */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .button-container button {
+      min-width: 220px; /* Minimum width pour que le texte s'ajuste */
+      height: auto;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px; /* Ajustement de la taille du texte */
+      text-align: center; /* Centrer le texte à l'intérieur du bouton */
+      white-space: normal; /* Permet au texte de se répartir sur plusieurs lignes si nécessaire */
+    }
+  </style>
 </head>
 <body onload="afficherPoints()">
+
+  <!-- Header avec la navigation -->
   <header>
     <nav>
-        <ul>
-            <li><a href="tmp.html" class="nav-link">Home</a></li>
-            <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
-            <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="tmp.html" class="nav-link">Home</a></li>
+        <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+        <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+        <li><a href="https://www.linkedin.com/in/antoine-benhamou-5777792b3/" class="nav-link" target="_blank">Contact</a></li>
+      </ul>
     </nav>
-</header>
-<br><br><br><br>
+  </header>
+
+  <br><br><br><br>
+
+  <!-- Titre principal -->
   <h1><center>Questionnaire</center></h1>
+
+  <!-- Espaces avant la question -->
   <br><br><br>
+
+  <!-- Question -->
   <h3><center>Question 3</center></h3>
   <br><br>
   <h4><center>Quelle est une menace majeure pour la survie des koalas ?</center></h4>
 
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger3(1)">
-    La chasse excessive
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger3(2)">
-    Les tempêtes de sable
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger3(3)">
-    La destruction de leur habitat
-  </button>
-  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger3(4)">
-    Le manque de nourriture
-  </button>
+  <!-- Conteneur pour les boutons alignés -->
+  <div class="button-container">
+    <button onclick="verifierReponseEtRediriger3(1)">
+      La chasse excessive
+    </button>
+    <button onclick="verifierReponseEtRediriger3(2)">
+      Les tempêtes de sable
+    </button>
+    <button onclick="verifierReponseEtRediriger3(3)">
+      La destruction de leur habitat
+    </button>
+    <button onclick="verifierReponseEtRediriger3(4)">
+      Le manque de nourriture
+    </button>
+  </div>
 
+  <!-- Publicité à gauche -->
   <div class="vertical-bar left">
     <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
-</div>
+  </div>
 
-<div class="vertical-bar right">
+  <!-- Publicité à droite -->
+  <div class="vertical-bar right">
     <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
-</div>
+  </div>
 
-<footer class="site-footer">
-  <div class="footer-content">
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
       <div class="contact-info">
-          <h3>Contactez-nous</h3>
-          <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
-          <p>Téléphone : +33 6 12 34 56 78</p>
+        <h3>Contactez-nous</h3>
+        <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+        <p>Téléphone : +33 6 12 34 56 78</p>
       </div>
-  </div>
-  <div class="footer-bottom">
+    </div>
+    <div class="footer-bottom">
       <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
-  </div>
-</footer>
+    </div>
+  </footer>
 
+  <!-- Scripts -->
   <script src="js/script.js"></script>
 </body>
 </html>

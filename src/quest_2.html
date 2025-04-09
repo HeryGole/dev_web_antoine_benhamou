@@ -1,68 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Koalas</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ajout de style pour les boutons afin de les ajuster à leur texte */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .button-container button {
+      min-width: 220px; /* Minimum width pour que le texte s'ajuste */
+      height: auto;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px; /* Ajustement de la taille du texte */
+      text-align: center; /* Centrer le texte à l'intérieur du bouton */
+      white-space: normal; /* Permet au texte de se répartir sur plusieurs lignes si nécessaire */
+    }
+  </style>
 </head>
+
 <body onload="afficherPoints()">
+
+  <!-- Header avec la navigation -->
   <header>
     <nav>
-        <ul>
-            <li><a href="tmp.html" class="nav-link">Home</a></li>
-            <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
-            <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="tmp.html" class="nav-link">Home</a></li>
+        <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+        <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+        <li><a href="https://www.linkedin.com/in/antoine-benhamou-5777792b3/" class="nav-link" target="_blank">Contact</a></li>
+      </ul>
     </nav>
-</header>
-<br><br><br><br>
-  <h1><center>Questionnaire</center></h1>
-  <br><br><br>
-  <h3><center>Question 2</center></h3><br><br>
-  <h4><center>Pourquoi les koalas dorment-ils entre 18 et 22 heures par jour ?</center></h4><br>
+  </header>
 
-  <!-- Centrer les boutons -->
-  <div style="text-align: center;">
-    <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger2(1)">
-      ils évitent les prédateurs pendant la journée
+  <!-- Espace entre le header et le contenu -->
+  <br><br><br><br>
+
+  <!-- Titre principal -->
+  <h1><center>Questionnaire</center></h1>
+
+  <!-- Espaces avant la question -->
+  <br><br><br>
+
+  <!-- Question -->
+  <h3><center>Question 2</center></h3>
+  <br><br>
+  <h4><center>Pourquoi les koalas dorment-ils entre 18 et 22 heures par jour ?</center></h4>
+  <br>
+
+  <!-- Conteneur pour les boutons alignés -->
+  <div class="button-container">
+    <button onclick="verifierReponseEtRediriger2(1)">
+      Ils évitent les prédateurs pendant la journée
     </button>
-    <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger2(2)">
-      leur alimentation est pauvre en énergie
+    <button onclick="verifierReponseEtRediriger2(2)">
+      Leur alimentation est pauvre en énergie
     </button>
-    <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger2(3)">
-      ils sont nocturnes et actifs la nuit
+    <button onclick="verifierReponseEtRediriger2(3)">
+      Ils sont nocturnes et actifs la nuit
     </button>
-    <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger2(4)">
-      ils ont besoin de beaucoup de repos pour se reproduire
+    <button onclick="verifierReponseEtRediriger2(4)">
+      Ils ont besoin de beaucoup de repos pour se reproduire
     </button>
   </div>
 
+  <!-- Publicité à gauche -->
   <div class="vertical-bar left">
     <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
   </div>
 
+  <!-- Publicité à droite -->
   <div class="vertical-bar right">
     <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
     <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
   </div>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-content">
-        <div class="contact-info">
-            <h3>Contactez-nous</h3>
-            <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
-            <p>Téléphone : +33 6 12 34 56 78</p>
-        </div>
+      <div class="contact-info">
+        <h3>Contactez-nous</h3>
+        <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+        <p>Téléphone : +33 6 12 34 56 78</p>
+      </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
+      <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script src="js/script.js"></script>
 </body>
+
 </html>
