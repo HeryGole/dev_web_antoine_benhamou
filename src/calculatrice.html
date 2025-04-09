@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="tmp.html" class="nav-link">Home</a></li>
+                <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+                <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calculator">
+            <input type="text" class="calculator-display" id="display" disabled>
+            <div class="calculator-buttons">
+                <button class="button clear" onclick="clearDisplay()">C</button>
+                <button class="button" onclick="appendToDisplay('(')">(</button>
+                <button class="button" onclick="appendToDisplay(')')">)</button>
+                <button class="button operator" onclick="appendToDisplay('/')">÷</button>
+
+                <button class="button" onclick="appendToDisplay('7')">7</button>
+                <button class="button" onclick="appendToDisplay('8')">8</button>
+                <button class="button" onclick="appendToDisplay('9')">9</button>
+                <button class="button operator" onclick="appendToDisplay('*')">×</button>
+
+                <button class="button" onclick="appendToDisplay('4')">4</button>
+                <button class="button" onclick="appendToDisplay('5')">5</button>
+                <button class="button" onclick="appendToDisplay('6')">6</button>
+                <button class="button operator" onclick="appendToDisplay('-')">−</button>
+
+                <button class="button" onclick="appendToDisplay('1')">1</button>
+                <button class="button" onclick="appendToDisplay('2')">2</button>
+                <button class="button" onclick="appendToDisplay('3')">3</button>
+                <button class="button operator" onclick="appendToDisplay('+')">+</button>
+
+                <button class="button" onclick="appendToDisplay('0')">0</button>
+                <button class="button" onclick="appendToDisplay('.')">.</button>
+                <button class="button operator" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+
+        <div class="vertical-bar left">
+            <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
+            <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
+            <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
+        </div>
+        
+        <div class="vertical-bar right">
+            <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
+            <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
+            <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
+        </div>
+
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contactez-nous</h3>
+                    <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+                    <p>Téléphone : +33 6 12 34 56 78</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
+            </div>
+        </footer>
+        
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

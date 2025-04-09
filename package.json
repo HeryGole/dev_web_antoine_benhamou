@@ -1,0 +1,20 @@
+{
+  "name": "valb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "daisyui": "^5.0.6"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "tailwind": "^2.3.1"
+  }
+}

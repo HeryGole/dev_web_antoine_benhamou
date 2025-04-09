@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Koalas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body onload="afficherScoreFinal()">
+  <header>
+        <nav>
+            <ul>
+                <li><a href="tmp.html" class="nav-link">Home</a></li>
+                <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+                <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="vertical-bar left">
+      <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
+      <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
+      <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
+  </div>
+  
+  <div class="vertical-bar right">
+      <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
+      <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
+      <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
+  </div>  
+
+<body onload="afficherScoreFinal()">
+  <h1>Résultat Final</h1>
+  <p id="score-final">Chargement...</p>
+  <button onclick="recommencer()">Recommencer</button>
+
+  <script>
+    function afficherScoreFinal() {
+      let points = parseInt(localStorage.getItem('points')) || 0;
+      document.getElementById('score-final').textContent = "Votre score est : " + points;
+    }
+
+    function recommencer() {
+      localStorage.setItem('points', 0);
+      window.location.href = "quest_1.html";
+    }
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+      <div class="contact-info">
+          <h3>Contactez-nous</h3>
+          <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+          <p>Téléphone : +33 6 12 34 56 78</p>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
+  </div>
+</footer>
+</body>
+</html>

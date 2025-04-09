@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Koalas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="afficherPoints()">
+  <header>
+    <nav>
+        <ul>
+            <li><a href="tmp.html" class="nav-link">Home</a></li>
+            <li><a href="calculatrice.html" class="nav-link">Calculatrice</a></li>
+            <li><a href="quest_1.html" class="nav-link">Questionnaire</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<br><br><br><br>
+  <h1><center>Questionnaire</center></h1>
+  <br><br><br>
+  <h3><center>Question 1</center></h3>
+  <br><br>
+  <h4><center>Question à rédiger</center></h4>
+
+  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(1)">
+    Réponse 1
+  </button>
+  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(2)">
+    Réponse 2
+  </button>
+  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(3)">
+    Réponse 3
+  </button>
+  <button style="width: 180px; height: 50px; margin: 10px;" onclick="verifierReponseEtRediriger1(4)">
+    Réponse 4
+  </button>
+
+  <div class="vertical-bar left">
+    <a href="pub.html" target="_blank"><img src="img/pub-1.jpg" alt="Description"></a>
+    <a href="pub.html" target="_blank"><img src="img/pub-3.webp" alt="Description"></a>
+    <a href="pub.html" target="_blank"><img src="img/pub-5.avif" alt="Description"></a>
+</div>
+
+<div class="vertical-bar right">
+    <a href="pub.html" target="_blank"><img src="img/pub-4.webp" alt="Description"></a>
+    <a href="pub.html" target="_blank"><img src="img/pub-2.jpg" alt="Description"></a>
+    <a href="pub.html" target="_blank"><img src="img/pub-6.jpg" alt="Description"></a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+      <div class="contact-info">
+          <h3>Contactez-nous</h3>
+          <p>Email : <a href="mailto:contact@koalasite.com">contact@koalasite.com</a></p>
+          <p>Téléphone : +33 6 12 34 56 78</p>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2025 Koala Site. Tous droits réservés.</p>
+  </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem('points') === null) {
+      localStorage.setItem('points', 0);
+  }
+});
+
+
+
+</script>
+  
+
+  <p id="resultat">Points : 0</p>
+  <script src="js/script.js"></script>
+</body>
+</html>
